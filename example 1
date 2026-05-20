@@ -1,0 +1,37 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Practica 1. Generacion de señales basicas en Python
+
+# crear un vector de tiempo discreto
+n = np.arange(-10, 11)  # no inclusivo por la derecha
+
+# generar una señal senoidal discreta
+senoidal = np.sin(2 * np.pi * 0.1 * n)
+
+# generar una señal cosenoidal discreta
+cosenoidal = np.cos(2 * np.pi * 0.1 * n)
+
+# generar una señal impulso unitario discreta
+impulso = np.where(n == 0, 1, 0)
+
+# generar una señal escalon unitario discreta
+escalon = np.where(n >= 0, 1, 0)
+
+# generar una señal rampa unitaria discreta
+rampa = np.where(n >= 0, n, 0)
+
+# generar ruido aleatorio discreto
+ruido = np.random.rand(len(n))
+
+# graficas
+plt.figure()
+
+plt.stem(n, senoidal)
+
+plt.title("Señal senoidal")
+plt.xlabel("Muestra n")
+plt.ylabel("x[n]")
+
+plt.grid(True)
+plt.show()

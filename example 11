@@ -1,0 +1,108 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Practica 1. Generacion de señales basicas en Python
+
+# crear un vector de tiempo discreto
+n = np.arange(-10, 11)  # no inclusivo por la derecha
+
+# generar una señal senoidal discreta
+senoidal = np.sin(2 * np.pi * 0.1 * n)
+
+# generar una señal cosenoidal discreta
+cosenoidal = np.cos(2 * np.pi * 0.1 * n)
+
+# generar una señal impulso unitario discreta
+impulso = np.where(n == 0, 1, 0)
+
+# generar una señal escalon unitario discreta
+escalon = np.where(n >= 0, 1, 0)
+
+# generar una señal rampa unitaria discreta
+rampa = np.where(n >= 0, n, 0)
+
+# generar ruido aleatorio discreto
+ruido = np.random.rand(len(n))
+
+# graficas
+plt.figure()
+
+plt.stem(n, senoidal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Señal senoidal
+plt.figure()
+plt.stem(n, senoidal)
+plt.title("Señal senoidal")
+plt.grid(True)
+
+# Señal cosenoidal
+plt.figure()
+plt.stem(n, cosenoidal)
+plt.title("Señal cosenoidal")
+plt.grid(True)
+
+# Impulso
+plt.figure()
+plt.stem(n, impulso)
+plt.title("Impulso unitario")
+plt.grid(True)
+
+# Escalon
+plt.figure()
+plt.stem(n, escalon)
+plt.title("Escalon unitario")
+plt.grid(True)
+
+# Rampa
+plt.figure()
+plt.stem(n, rampa)
+plt.title("Rampa unitaria")
+plt.grid(True)
+
+# Ruido
+plt.figure()
+plt.stem(n, ruido)
+plt.title("Ruido aleatorio")
+plt.grid(True)
+
+plt.show()

@@ -1,0 +1,46 @@
+# Practica 1. generacion de senal basicss en phyton 
+
+
+
+# Actividades
+
+"""
+ crear un vector de timpo directo 
+ generar una senal senoidal discreta
+ generar una senal  coseidal discreta 
+ generar una senal  escalon unitario discreta 
+ generar una senal impulso unitario discreta
+ generar una senal rampa unitario discreta
+  generar ruiso aleatorio discreto 
+  """
+
+  n = np.arange(-10,11) # no inclusivo por la der
+
+  # generar una senal senoidal discreta
+  senoidal = np.sin(2*np.pi * 0.1 * n)
+
+# generar una senal cosenoidal discreta
+  cosenoidal = np.cos(2*np.pi * 0.1 * n)
+
+  # generar una senal impulso unitario discreta
+  impulso = np.where(n==0, 1, 0)
+
+
+
+# generar una senal  escalon unitario discreta 
+  escalon = np.where(n>=0, 0, 0)
+
+# generar una senal rampa unitario discreta
+rampa = np.where(n>=0, 1, 0)
+
+# generar ruiso aleatorio discreto
+ruido = nm.ramdom.rand(len(n))
+
+# graficas
+plt.figure()
+plt.stem(n, senoidal)
+plt.title ("senal senoidal")
+plt.xlabel("muestra n")
+plt.ylabel("x[n]")
+plt.grid(True)
+plt.show()
